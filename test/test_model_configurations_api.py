@@ -28,38 +28,38 @@ class TestModelConfigurationsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_configuration_id_download_get(self):
-        """Test case for configuration_id_download_get
+    def test_create_configuration(self):
+        """Test case for create_configuration
+
+        Creates a model configuration.  # noqa: E501
+        """
+        pass
+
+    def test_download_configuration(self):
+        """Test case for download_configuration
 
         Retreive signed url to download binary  # noqa: E501
         """
         pass
 
-    def test_configuration_id_get(self):
-        """Test case for configuration_id_get
+    def test_get_configuration(self):
+        """Test case for get_configuration
 
         Returns a model configuration  # noqa: E501
         """
         pass
 
-    def test_configuration_id_patch(self):
-        """Test case for configuration_id_patch
+    def test_launch_configuration(self):
+        """Test case for launch_configuration
 
         Launch a configuration to one of the workers to be processed.  # noqa: E501
         """
         pass
 
-    def test_configuration_id_put(self):
-        """Test case for configuration_id_put
+    def test_update_configuration(self):
+        """Test case for update_configuration
 
         Update and replace a model configuration  # noqa: E501
-        """
-        pass
-
-    def test_configuration_post(self):
-        """Test case for configuration_post
-
-        Creates a model configuration.  # noqa: E501
         """
         pass
 

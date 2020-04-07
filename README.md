@@ -59,14 +59,31 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Configuration() # Configuration | Model Configuration to add (optional)
+
+try:
+    # Creates a model configuration.
+    api_response = api_instance.create_configuration(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ModelConfigurationsApi->create_configuration: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = swagger_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
     # Retreive signed url to download binary
-    api_response = api_instance.configuration_id_download_get(id)
+    api_response = api_instance.download_configuration(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelConfigurationsApi->configuration_id_download_get: %s\n" % e)
+    print("Exception when calling ModelConfigurationsApi->download_configuration: %s\n" % e)
 
 # Configure API key authorization: ApiKeyAuth
 configuration = swagger_client.Configuration()
@@ -81,10 +98,10 @@ status_only = 'status_only_example' # str | pass an optional statusOnly to just 
 
 try:
     # Returns a model configuration
-    api_response = api_instance.configuration_id_get(id, status_only=status_only)
+    api_response = api_instance.get_configuration(id, status_only=status_only)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelConfigurationsApi->configuration_id_get: %s\n" % e)
+    print("Exception when calling ModelConfigurationsApi->get_configuration: %s\n" % e)
 
 # Configure API key authorization: ApiKeyAuth
 configuration = swagger_client.Configuration()
@@ -98,9 +115,9 @@ id = 'id_example' # str |
 
 try:
     # Launch a configuration to one of the workers to be processed.
-    api_instance.configuration_id_patch(id)
+    api_instance.launch_configuration(id)
 except ApiException as e:
-    print("Exception when calling ModelConfigurationsApi->configuration_id_patch: %s\n" % e)
+    print("Exception when calling ModelConfigurationsApi->launch_configuration: %s\n" % e)
 
 # Configure API key authorization: ApiKeyAuth
 configuration = swagger_client.Configuration()
@@ -115,27 +132,10 @@ body = swagger_client.Configuration() # Configuration | Model Configuration para
 
 try:
     # Update and replace a model configuration
-    api_response = api_instance.configuration_id_put(id, body=body)
+    api_response = api_instance.update_configuration(id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ModelConfigurationsApi->configuration_id_put: %s\n" % e)
-
-# Configure API key authorization: ApiKeyAuth
-configuration = swagger_client.Configuration()
-configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Configuration() # Configuration | Model Configuration to add (optional)
-
-try:
-    # Creates a model configuration.
-    api_response = api_instance.configuration_post(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ModelConfigurationsApi->configuration_post: %s\n" % e)
+    print("Exception when calling ModelConfigurationsApi->update_configuration: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -144,11 +144,11 @@ All URIs are relative to *https://app.micromechanicalmodeling.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ModelConfigurationsApi* | [**configuration_id_download_get**](docs/ModelConfigurationsApi.md#configuration_id_download_get) | **GET** /configuration/{_id}/download | Retreive signed url to download binary
-*ModelConfigurationsApi* | [**configuration_id_get**](docs/ModelConfigurationsApi.md#configuration_id_get) | **GET** /configuration/{_id} | Returns a model configuration
-*ModelConfigurationsApi* | [**configuration_id_patch**](docs/ModelConfigurationsApi.md#configuration_id_patch) | **PATCH** /configuration/{_id} | Launch a configuration to one of the workers to be processed.
-*ModelConfigurationsApi* | [**configuration_id_put**](docs/ModelConfigurationsApi.md#configuration_id_put) | **PUT** /configuration/{_id} | Update and replace a model configuration
-*ModelConfigurationsApi* | [**configuration_post**](docs/ModelConfigurationsApi.md#configuration_post) | **POST** /configuration | Creates a model configuration.
+*ModelConfigurationsApi* | [**create_configuration**](docs/ModelConfigurationsApi.md#create_configuration) | **POST** /configuration | Creates a model configuration.
+*ModelConfigurationsApi* | [**download_configuration**](docs/ModelConfigurationsApi.md#download_configuration) | **GET** /configuration/{_id}/download | Retreive signed url to download binary
+*ModelConfigurationsApi* | [**get_configuration**](docs/ModelConfigurationsApi.md#get_configuration) | **GET** /configuration/{_id} | Returns a model configuration
+*ModelConfigurationsApi* | [**launch_configuration**](docs/ModelConfigurationsApi.md#launch_configuration) | **PATCH** /configuration/{_id} | Launch a configuration to one of the workers to be processed.
+*ModelConfigurationsApi* | [**update_configuration**](docs/ModelConfigurationsApi.md#update_configuration) | **PUT** /configuration/{_id} | Update and replace a model configuration
 
 ## Documentation For Models
 

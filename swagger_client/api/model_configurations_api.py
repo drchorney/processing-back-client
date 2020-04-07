@@ -32,13 +32,108 @@ class ModelConfigurationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def configuration_id_download_get(self, id, **kwargs):  # noqa: E501
+    def create_configuration(self, **kwargs):  # noqa: E501
+        """Creates a model configuration.  # noqa: E501
+
+        Adds an item to the system  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_configuration(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Configuration body: Model Configuration to add
+        :return: Configuration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_configuration_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_configuration_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_configuration_with_http_info(self, **kwargs):  # noqa: E501
+        """Creates a model configuration.  # noqa: E501
+
+        Adds an item to the system  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_configuration_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Configuration body: Model Configuration to add
+        :return: Configuration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_configuration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/configuration', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Configuration',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def download_configuration(self, id, **kwargs):  # noqa: E501
         """Retreive signed url to download binary  # noqa: E501
 
         In order to download the computer binary from S3, you need to get a signed url (as the bucket is private).   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_download_get(id, async_req=True)
+        >>> thread = api.download_configuration(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,18 +144,18 @@ class ModelConfigurationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configuration_id_download_get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.download_configuration_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configuration_id_download_get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.download_configuration_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def configuration_id_download_get_with_http_info(self, id, **kwargs):  # noqa: E501
+    def download_configuration_with_http_info(self, id, **kwargs):  # noqa: E501
         """Retreive signed url to download binary  # noqa: E501
 
         In order to download the computer binary from S3, you need to get a signed url (as the bucket is private).   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_download_get_with_http_info(id, async_req=True)
+        >>> thread = api.download_configuration_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -81,14 +176,14 @@ class ModelConfigurationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configuration_id_download_get" % key
+                    " to method download_configuration" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `configuration_id_download_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `download_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -127,13 +222,13 @@ class ModelConfigurationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def configuration_id_get(self, id, **kwargs):  # noqa: E501
+    def get_configuration(self, id, **kwargs):  # noqa: E501
         """Returns a model configuration  # noqa: E501
 
         By passing in the appropriate options, you can search for available model configurations in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_get(id, async_req=True)
+        >>> thread = api.get_configuration(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -145,18 +240,18 @@ class ModelConfigurationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configuration_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_configuration_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configuration_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_configuration_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def configuration_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_configuration_with_http_info(self, id, **kwargs):  # noqa: E501
         """Returns a model configuration  # noqa: E501
 
         By passing in the appropriate options, you can search for available model configurations in the system   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_get_with_http_info(id, async_req=True)
+        >>> thread = api.get_configuration_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -178,14 +273,14 @@ class ModelConfigurationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configuration_id_get" % key
+                    " to method get_configuration" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `configuration_id_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -226,13 +321,13 @@ class ModelConfigurationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def configuration_id_patch(self, id, **kwargs):  # noqa: E501
+    def launch_configuration(self, id, **kwargs):  # noqa: E501
         """Launch a configuration to one of the workers to be processed.  # noqa: E501
 
         Patching the model configuration, will put a job in an AWS SQS Queue. Worker computers poll the job Queue. And when a job is found it will process, and then upload the binary to S3. To grab the binary access the GET /configuration/{uuid}/download for signed S3 urls.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_patch(id, async_req=True)
+        >>> thread = api.launch_configuration(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -243,18 +338,18 @@ class ModelConfigurationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configuration_id_patch_with_http_info(id, **kwargs)  # noqa: E501
+            return self.launch_configuration_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configuration_id_patch_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.launch_configuration_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def configuration_id_patch_with_http_info(self, id, **kwargs):  # noqa: E501
+    def launch_configuration_with_http_info(self, id, **kwargs):  # noqa: E501
         """Launch a configuration to one of the workers to be processed.  # noqa: E501
 
         Patching the model configuration, will put a job in an AWS SQS Queue. Worker computers poll the job Queue. And when a job is found it will process, and then upload the binary to S3. To grab the binary access the GET /configuration/{uuid}/download for signed S3 urls.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_patch_with_http_info(id, async_req=True)
+        >>> thread = api.launch_configuration_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -275,14 +370,14 @@ class ModelConfigurationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configuration_id_patch" % key
+                    " to method launch_configuration" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `configuration_id_patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `launch_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -317,13 +412,13 @@ class ModelConfigurationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def configuration_id_put(self, id, **kwargs):  # noqa: E501
+    def update_configuration(self, id, **kwargs):  # noqa: E501
         """Update and replace a model configuration  # noqa: E501
 
         By passing in the appropriate options, you can update an existing model configuration   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_put(id, async_req=True)
+        >>> thread = api.update_configuration(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -335,18 +430,18 @@ class ModelConfigurationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configuration_id_put_with_http_info(id, **kwargs)  # noqa: E501
+            return self.update_configuration_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configuration_id_put_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.update_configuration_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def configuration_id_put_with_http_info(self, id, **kwargs):  # noqa: E501
+    def update_configuration_with_http_info(self, id, **kwargs):  # noqa: E501
         """Update and replace a model configuration  # noqa: E501
 
         By passing in the appropriate options, you can update an existing model configuration   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_id_put_with_http_info(id, async_req=True)
+        >>> thread = api.update_configuration_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -368,14 +463,14 @@ class ModelConfigurationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configuration_id_put" % key
+                    " to method update_configuration" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `configuration_id_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -406,101 +501,6 @@ class ModelConfigurationsApi(object):
 
         return self.api_client.call_api(
             '/configuration/{_id}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Configuration',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def configuration_post(self, **kwargs):  # noqa: E501
-        """Creates a model configuration.  # noqa: E501
-
-        Adds an item to the system  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_post(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Configuration body: Model Configuration to add
-        :return: Configuration
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.configuration_post_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.configuration_post_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def configuration_post_with_http_info(self, **kwargs):  # noqa: E501
-        """Creates a model configuration.  # noqa: E501
-
-        Adds an item to the system  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configuration_post_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Configuration body: Model Configuration to add
-        :return: Configuration
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method configuration_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKeyAuth']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/configuration', 'POST',
             path_params,
             query_params,
             header_params,
