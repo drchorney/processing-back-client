@@ -42,8 +42,8 @@ class ModelConfigurationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Configuration body: Model Configuration to add
-        :return: Configuration
+        :param ParamSet body: Model Configuration to add
+        :return: ParamSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -64,8 +64,8 @@ class ModelConfigurationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Configuration body: Model Configuration to add
-        :return: Configuration
+        :param ParamSet body: Model Configuration to add
+        :return: ParamSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Configuration',  # noqa: E501
+            response_type='ParamSet',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -234,7 +234,7 @@ class ModelConfigurationsApi(object):
         :param async_req bool
         :param str id: (required)
         :param str status_only: pass an optional statusOnly to just retun status for polling.
-        :return: Configuration
+        :return: ParamSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -257,7 +257,7 @@ class ModelConfigurationsApi(object):
         :param async_req bool
         :param str id: (required)
         :param str status_only: pass an optional statusOnly to just retun status for polling.
-        :return: Configuration
+        :return: ParamSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -313,7 +313,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Configuration',  # noqa: E501
+            response_type='ParamSet',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -423,8 +423,8 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :param Configuration body: Model Configuration parameters to update.
-        :return: Configuration
+        :param ParamSet body: Model Configuration parameters to update.
+        :return: ParamSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -446,8 +446,8 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :param Configuration body: Model Configuration parameters to update.
-        :return: Configuration
+        :param ParamSet body: Model Configuration parameters to update.
+        :return: ParamSet
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -507,7 +507,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Configuration',  # noqa: E501
+            response_type='ParamSet',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

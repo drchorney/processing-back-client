@@ -59,7 +59,7 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Configuration() # Configuration | Model Configuration to add (optional)
+body = swagger_client.ParamSet() # ParamSet | Model Configuration to add (optional)
 
 try:
     # Creates a model configuration.
@@ -128,7 +128,7 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | 
-body = swagger_client.Configuration() # Configuration | Model Configuration parameters to update. (optional)
+body = swagger_client.ParamSet() # ParamSet | Model Configuration parameters to update. (optional)
 
 try:
     # Update and replace a model configuration
@@ -152,10 +152,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [Configuration](docs/Configuration.md)
  - [DensityLayer](docs/DensityLayer.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [Layer](docs/Layer.md)
+ - [ParamSet](docs/ParamSet.md)
 
 ## Documentation For Authorization
 

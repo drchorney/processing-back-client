@@ -20,7 +20,7 @@ from swagger_client.api.model_configurations_api import ModelConfigurationsApi
 from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
 # import models into sdk package
-from swagger_client.models.configuration import Configuration
 from swagger_client.models.density_layer import DensityLayer
 from swagger_client.models.inline_response200 import InlineResponse200
 from swagger_client.models.layer import Layer
+from swagger_client.models.param_set import ParamSet

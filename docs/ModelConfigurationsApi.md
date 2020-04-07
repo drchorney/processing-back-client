@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**update_configuration**](ModelConfigurationsApi.md#update_configuration) | **PUT** /configuration/{_id} | Update and replace a model configuration
 
 # **create_configuration**
-> Configuration create_configuration(body=body)
+> ParamSet create_configuration(body=body)
 
 Creates a model configuration.
 
@@ -33,7 +33,7 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Configuration() # Configuration | Model Configuration to add (optional)
+body = swagger_client.ParamSet() # ParamSet | Model Configuration to add (optional)
 
 try:
     # Creates a model configuration.
@@ -47,11 +47,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Configuration**](Configuration.md)| Model Configuration to add | [optional] 
+ **body** | [**ParamSet**](ParamSet.md)| Model Configuration to add | [optional] 
 
 ### Return type
 
-[**Configuration**](Configuration.md)
+[**ParamSet**](ParamSet.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_configuration**
-> Configuration get_configuration(id, status_only=status_only)
+> ParamSet get_configuration(id, status_only=status_only)
 
 Returns a model configuration
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Configuration**](Configuration.md)
+[**ParamSet**](ParamSet.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_configuration**
-> Configuration update_configuration(id, body=body)
+> ParamSet update_configuration(id, body=body)
 
 Update and replace a model configuration
 
@@ -251,7 +251,7 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | 
-body = swagger_client.Configuration() # Configuration | Model Configuration parameters to update. (optional)
+body = swagger_client.ParamSet() # ParamSet | Model Configuration parameters to update. (optional)
 
 try:
     # Update and replace a model configuration
@@ -266,11 +266,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **body** | [**Configuration**](Configuration.md)| Model Configuration parameters to update. | [optional] 
+ **body** | [**ParamSet**](ParamSet.md)| Model Configuration parameters to update. | [optional] 
 
 ### Return type
 
-[**Configuration**](Configuration.md)
+[**ParamSet**](ParamSet.md)
 
 ### Authorization
 

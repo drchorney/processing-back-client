@@ -14,7 +14,7 @@
 from __future__ import absolute_import
 
 # import models into model package
-from swagger_client.models.configuration import Configuration
 from swagger_client.models.density_layer import DensityLayer
 from swagger_client.models.inline_response200 import InlineResponse200
 from swagger_client.models.layer import Layer
+from swagger_client.models.param_set import ParamSet
