@@ -29,66 +29,295 @@ class InlineResponse200(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'url': 'str',
-        'bucket_key': 'str'
+        'name': 'str',
+        'hx': 'float',
+        'hy': 'float',
+        'dz': 'float',
+        'model_type': 'str',
+        'peak_frequency': 'float',
+        'simulation_time': 'float',
+        'layers': 'list[Layer]',
+        'density_layers': 'list[DensityLayer]',
+        'id': 'str'
     }
+    if hasattr(ParamSet, "swagger_types"):
+        swagger_types.update(ParamSet.swagger_types)
 
     attribute_map = {
-        'url': 'url',
-        'bucket_key': 'bucketKey'
+        'name': 'name',
+        'hx': 'hx',
+        'hy': 'hy',
+        'dz': 'dz',
+        'model_type': 'modelType',
+        'peak_frequency': 'peakFrequency',
+        'simulation_time': 'simulationTime',
+        'layers': 'layers',
+        'density_layers': 'densityLayers',
+        'id': '_id'
     }
+    if hasattr(ParamSet, "attribute_map"):
+        attribute_map.update(ParamSet.attribute_map)
 
-    def __init__(self, url=None, bucket_key=None):  # noqa: E501
+    def __init__(self, name=None, hx=None, hy=None, dz=None, model_type=None, peak_frequency=None, simulation_time=None, layers=None, density_layers=None, id=None, *args, **kwargs):  # noqa: E501
         """InlineResponse200 - a model defined in Swagger"""  # noqa: E501
-        self._url = None
-        self._bucket_key = None
+        self._name = None
+        self._hx = None
+        self._hy = None
+        self._dz = None
+        self._model_type = None
+        self._peak_frequency = None
+        self._simulation_time = None
+        self._layers = None
+        self._density_layers = None
+        self._id = None
         self.discriminator = None
-        if url is not None:
-            self.url = url
-        if bucket_key is not None:
-            self.bucket_key = bucket_key
+        self.name = name
+        self.hx = hx
+        self.hy = hy
+        self.dz = dz
+        self.model_type = model_type
+        self.peak_frequency = peak_frequency
+        self.simulation_time = simulation_time
+        self.layers = layers
+        self.density_layers = density_layers
+        self.id = id
+        ParamSet.__init__(self, *args, **kwargs)
 
     @property
-    def url(self):
-        """Gets the url of this InlineResponse200.  # noqa: E501
+    def name(self):
+        """Gets the name of this InlineResponse200.  # noqa: E501
 
 
-        :return: The url of this InlineResponse200.  # noqa: E501
+        :return: The name of this InlineResponse200.  # noqa: E501
         :rtype: str
         """
-        return self._url
+        return self._name
 
-    @url.setter
-    def url(self, url):
-        """Sets the url of this InlineResponse200.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this InlineResponse200.
 
 
-        :param url: The url of this InlineResponse200.  # noqa: E501
+        :param name: The name of this InlineResponse200.  # noqa: E501
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
-        self._url = url
+        self._name = name
 
     @property
-    def bucket_key(self):
-        """Gets the bucket_key of this InlineResponse200.  # noqa: E501
+    def hx(self):
+        """Gets the hx of this InlineResponse200.  # noqa: E501
 
 
-        :return: The bucket_key of this InlineResponse200.  # noqa: E501
+        :return: The hx of this InlineResponse200.  # noqa: E501
+        :rtype: float
+        """
+        return self._hx
+
+    @hx.setter
+    def hx(self, hx):
+        """Sets the hx of this InlineResponse200.
+
+
+        :param hx: The hx of this InlineResponse200.  # noqa: E501
+        :type: float
+        """
+        if hx is None:
+            raise ValueError("Invalid value for `hx`, must not be `None`")  # noqa: E501
+
+        self._hx = hx
+
+    @property
+    def hy(self):
+        """Gets the hy of this InlineResponse200.  # noqa: E501
+
+
+        :return: The hy of this InlineResponse200.  # noqa: E501
+        :rtype: float
+        """
+        return self._hy
+
+    @hy.setter
+    def hy(self, hy):
+        """Sets the hy of this InlineResponse200.
+
+
+        :param hy: The hy of this InlineResponse200.  # noqa: E501
+        :type: float
+        """
+        if hy is None:
+            raise ValueError("Invalid value for `hy`, must not be `None`")  # noqa: E501
+
+        self._hy = hy
+
+    @property
+    def dz(self):
+        """Gets the dz of this InlineResponse200.  # noqa: E501
+
+
+        :return: The dz of this InlineResponse200.  # noqa: E501
+        :rtype: float
+        """
+        return self._dz
+
+    @dz.setter
+    def dz(self, dz):
+        """Sets the dz of this InlineResponse200.
+
+
+        :param dz: The dz of this InlineResponse200.  # noqa: E501
+        :type: float
+        """
+        if dz is None:
+            raise ValueError("Invalid value for `dz`, must not be `None`")  # noqa: E501
+
+        self._dz = dz
+
+    @property
+    def model_type(self):
+        """Gets the model_type of this InlineResponse200.  # noqa: E501
+
+
+        :return: The model_type of this InlineResponse200.  # noqa: E501
         :rtype: str
         """
-        return self._bucket_key
+        return self._model_type
 
-    @bucket_key.setter
-    def bucket_key(self, bucket_key):
-        """Sets the bucket_key of this InlineResponse200.
+    @model_type.setter
+    def model_type(self, model_type):
+        """Sets the model_type of this InlineResponse200.
 
 
-        :param bucket_key: The bucket_key of this InlineResponse200.  # noqa: E501
+        :param model_type: The model_type of this InlineResponse200.  # noqa: E501
         :type: str
         """
+        if model_type is None:
+            raise ValueError("Invalid value for `model_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["Elastic", "Acoustic"]  # noqa: E501
+        if model_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `model_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(model_type, allowed_values)
+            )
 
-        self._bucket_key = bucket_key
+        self._model_type = model_type
+
+    @property
+    def peak_frequency(self):
+        """Gets the peak_frequency of this InlineResponse200.  # noqa: E501
+
+
+        :return: The peak_frequency of this InlineResponse200.  # noqa: E501
+        :rtype: float
+        """
+        return self._peak_frequency
+
+    @peak_frequency.setter
+    def peak_frequency(self, peak_frequency):
+        """Sets the peak_frequency of this InlineResponse200.
+
+
+        :param peak_frequency: The peak_frequency of this InlineResponse200.  # noqa: E501
+        :type: float
+        """
+        if peak_frequency is None:
+            raise ValueError("Invalid value for `peak_frequency`, must not be `None`")  # noqa: E501
+
+        self._peak_frequency = peak_frequency
+
+    @property
+    def simulation_time(self):
+        """Gets the simulation_time of this InlineResponse200.  # noqa: E501
+
+
+        :return: The simulation_time of this InlineResponse200.  # noqa: E501
+        :rtype: float
+        """
+        return self._simulation_time
+
+    @simulation_time.setter
+    def simulation_time(self, simulation_time):
+        """Sets the simulation_time of this InlineResponse200.
+
+
+        :param simulation_time: The simulation_time of this InlineResponse200.  # noqa: E501
+        :type: float
+        """
+        if simulation_time is None:
+            raise ValueError("Invalid value for `simulation_time`, must not be `None`")  # noqa: E501
+
+        self._simulation_time = simulation_time
+
+    @property
+    def layers(self):
+        """Gets the layers of this InlineResponse200.  # noqa: E501
+
+
+        :return: The layers of this InlineResponse200.  # noqa: E501
+        :rtype: list[Layer]
+        """
+        return self._layers
+
+    @layers.setter
+    def layers(self, layers):
+        """Sets the layers of this InlineResponse200.
+
+
+        :param layers: The layers of this InlineResponse200.  # noqa: E501
+        :type: list[Layer]
+        """
+        if layers is None:
+            raise ValueError("Invalid value for `layers`, must not be `None`")  # noqa: E501
+
+        self._layers = layers
+
+    @property
+    def density_layers(self):
+        """Gets the density_layers of this InlineResponse200.  # noqa: E501
+
+
+        :return: The density_layers of this InlineResponse200.  # noqa: E501
+        :rtype: list[DensityLayer]
+        """
+        return self._density_layers
+
+    @density_layers.setter
+    def density_layers(self, density_layers):
+        """Sets the density_layers of this InlineResponse200.
+
+
+        :param density_layers: The density_layers of this InlineResponse200.  # noqa: E501
+        :type: list[DensityLayer]
+        """
+        if density_layers is None:
+            raise ValueError("Invalid value for `density_layers`, must not be `None`")  # noqa: E501
+
+        self._density_layers = density_layers
+
+    @property
+    def id(self):
+        """Gets the id of this InlineResponse200.  # noqa: E501
+
+
+        :return: The id of this InlineResponse200.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this InlineResponse200.
+
+
+        :param id: The id of this InlineResponse200.  # noqa: E501
+        :type: str
+        """
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

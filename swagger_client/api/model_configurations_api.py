@@ -43,7 +43,7 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param ParamSet body: Model Configuration to add
-        :return: ParamSet
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -65,7 +65,7 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param ParamSet body: Model Configuration to add
-        :return: ParamSet
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,7 +119,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ParamSet',  # noqa: E501
+            response_type='InlineResponse200',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -138,7 +138,7 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :return: InlineResponse200
+        :return: InlineResponse2001
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -160,7 +160,7 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :return: InlineResponse200
+        :return: InlineResponse2001
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -214,7 +214,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse200',  # noqa: E501
+            response_type='InlineResponse2001',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -234,7 +234,7 @@ class ModelConfigurationsApi(object):
         :param async_req bool
         :param str id: (required)
         :param str status_only: pass an optional statusOnly to just retun status for polling.
-        :return: ParamSet
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -257,7 +257,7 @@ class ModelConfigurationsApi(object):
         :param async_req bool
         :param str id: (required)
         :param str status_only: pass an optional statusOnly to just retun status for polling.
-        :return: ParamSet
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -313,7 +313,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ParamSet',  # noqa: E501
+            response_type='InlineResponse200',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -424,7 +424,7 @@ class ModelConfigurationsApi(object):
         :param async_req bool
         :param str id: (required)
         :param ParamSet body: Model Configuration parameters to update.
-        :return: ParamSet
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -447,7 +447,7 @@ class ModelConfigurationsApi(object):
         :param async_req bool
         :param str id: (required)
         :param ParamSet body: Model Configuration parameters to update.
-        :return: ParamSet
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -507,7 +507,7 @@ class ModelConfigurationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ParamSet',  # noqa: E501
+            response_type='InlineResponse200',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
