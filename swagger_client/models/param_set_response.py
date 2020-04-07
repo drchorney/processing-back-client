@@ -30,6 +30,7 @@ class ParamSetResponse(object):
     """
     swagger_types = {
         'id': 'str',
+        'status': 'str',
         'name': 'str',
         'hx': 'float',
         'hy': 'float',
@@ -43,6 +44,7 @@ class ParamSetResponse(object):
 
     attribute_map = {
         'id': '_id',
+        'status': 'status',
         'name': 'name',
         'hx': 'hx',
         'hy': 'hy',
@@ -54,9 +56,10 @@ class ParamSetResponse(object):
         'density_layers': 'densityLayers'
     }
 
-    def __init__(self, id=None, name=None, hx=None, hy=None, dz=None, model_type=None, peak_frequency=None, simulation_time=None, layers=None, density_layers=None):  # noqa: E501
+    def __init__(self, id=None, status=None, name=None, hx=None, hy=None, dz=None, model_type=None, peak_frequency=None, simulation_time=None, layers=None, density_layers=None):  # noqa: E501
         """ParamSetResponse - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._status = None
         self._name = None
         self._hx = None
         self._hy = None
@@ -68,15 +71,25 @@ class ParamSetResponse(object):
         self._density_layers = None
         self.discriminator = None
         self.id = id
-        self.name = name
-        self.hx = hx
-        self.hy = hy
-        self.dz = dz
-        self.model_type = model_type
-        self.peak_frequency = peak_frequency
-        self.simulation_time = simulation_time
-        self.layers = layers
-        self.density_layers = density_layers
+        self.status = status
+        if name is not None:
+            self.name = name
+        if hx is not None:
+            self.hx = hx
+        if hy is not None:
+            self.hy = hy
+        if dz is not None:
+            self.dz = dz
+        if model_type is not None:
+            self.model_type = model_type
+        if peak_frequency is not None:
+            self.peak_frequency = peak_frequency
+        if simulation_time is not None:
+            self.simulation_time = simulation_time
+        if layers is not None:
+            self.layers = layers
+        if density_layers is not None:
+            self.density_layers = density_layers
 
     @property
     def id(self):
@@ -102,6 +115,35 @@ class ParamSetResponse(object):
         self._id = id
 
     @property
+    def status(self):
+        """Gets the status of this ParamSetResponse.  # noqa: E501
+
+
+        :return: The status of this ParamSetResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ParamSetResponse.
+
+
+        :param status: The status of this ParamSetResponse.  # noqa: E501
+        :type: str
+        """
+        if status is None:
+            raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
+        allowed_values = ["UNSUBMITTED", "IN_PROGRESS", "COMPLETE"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
     def name(self):
         """Gets the name of this ParamSetResponse.  # noqa: E501
 
@@ -119,8 +161,6 @@ class ParamSetResponse(object):
         :param name: The name of this ParamSetResponse.  # noqa: E501
         :type: str
         """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 
@@ -142,8 +182,6 @@ class ParamSetResponse(object):
         :param hx: The hx of this ParamSetResponse.  # noqa: E501
         :type: float
         """
-        if hx is None:
-            raise ValueError("Invalid value for `hx`, must not be `None`")  # noqa: E501
 
         self._hx = hx
 
@@ -165,8 +203,6 @@ class ParamSetResponse(object):
         :param hy: The hy of this ParamSetResponse.  # noqa: E501
         :type: float
         """
-        if hy is None:
-            raise ValueError("Invalid value for `hy`, must not be `None`")  # noqa: E501
 
         self._hy = hy
 
@@ -188,8 +224,6 @@ class ParamSetResponse(object):
         :param dz: The dz of this ParamSetResponse.  # noqa: E501
         :type: float
         """
-        if dz is None:
-            raise ValueError("Invalid value for `dz`, must not be `None`")  # noqa: E501
 
         self._dz = dz
 
@@ -211,8 +245,6 @@ class ParamSetResponse(object):
         :param model_type: The model_type of this ParamSetResponse.  # noqa: E501
         :type: str
         """
-        if model_type is None:
-            raise ValueError("Invalid value for `model_type`, must not be `None`")  # noqa: E501
         allowed_values = ["Elastic", "Acoustic"]  # noqa: E501
         if model_type not in allowed_values:
             raise ValueError(
@@ -240,8 +272,6 @@ class ParamSetResponse(object):
         :param peak_frequency: The peak_frequency of this ParamSetResponse.  # noqa: E501
         :type: float
         """
-        if peak_frequency is None:
-            raise ValueError("Invalid value for `peak_frequency`, must not be `None`")  # noqa: E501
 
         self._peak_frequency = peak_frequency
 
@@ -263,8 +293,6 @@ class ParamSetResponse(object):
         :param simulation_time: The simulation_time of this ParamSetResponse.  # noqa: E501
         :type: float
         """
-        if simulation_time is None:
-            raise ValueError("Invalid value for `simulation_time`, must not be `None`")  # noqa: E501
 
         self._simulation_time = simulation_time
 
@@ -286,8 +314,6 @@ class ParamSetResponse(object):
         :param layers: The layers of this ParamSetResponse.  # noqa: E501
         :type: list[Layer]
         """
-        if layers is None:
-            raise ValueError("Invalid value for `layers`, must not be `None`")  # noqa: E501
 
         self._layers = layers
 
@@ -309,8 +335,6 @@ class ParamSetResponse(object):
         :param density_layers: The density_layers of this ParamSetResponse.  # noqa: E501
         :type: list[DensityLayer]
         """
-        if density_layers is None:
-            raise ValueError("Invalid value for `density_layers`, must not be `None`")  # noqa: E501
 
         self._density_layers = density_layers
 

@@ -94,7 +94,7 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | 
-status_only = 'status_only_example' # str | pass an optional statusOnly to just retun status for polling. (optional)
+status_only = true # bool | pass an optional statusOnly to just retun status for polling. (optional)
 
 try:
     # Returns a model configuration

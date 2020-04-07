@@ -233,7 +233,7 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :param str status_only: pass an optional statusOnly to just retun status for polling.
+        :param bool status_only: pass an optional statusOnly to just retun status for polling.
         :return: ParamSetResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -256,7 +256,7 @@ class ModelConfigurationsApi(object):
 
         :param async_req bool
         :param str id: (required)
-        :param str status_only: pass an optional statusOnly to just retun status for polling.
+        :param bool status_only: pass an optional statusOnly to just retun status for polling.
         :return: ParamSetResponse
                  If the method is called asynchronously,
                  returns the request thread.
