@@ -154,9 +154,9 @@ Class | Method | HTTP request | Description
 
  - [DensityLayer](docs/DensityLayer.md)
  - [InlineResponse200](docs/InlineResponse200.md)
- - [InlineResponse2001](docs/InlineResponse2001.md)
  - [Layer](docs/Layer.md)
  - [ParamSet](docs/ParamSet.md)
+ - [ParamSetResponse](docs/ParamSetResponse.md)
 
 ## Documentation For Authorization
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**update_configuration**](ModelConfigurationsApi.md#update_configuration) | **PUT** /configuration/{_id} | Update and replace a model configuration
 
 # **create_configuration**
-> InlineResponse200 create_configuration(body=body)
+> ParamSetResponse create_configuration(body=body)
 
 Creates a model configuration.
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ParamSetResponse**](ParamSetResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_configuration**
-> InlineResponse2001 download_configuration(id)
+> InlineResponse200 download_configuration(id)
 
 Retreive signed url to download binary
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_configuration**
-> InlineResponse200 get_configuration(id, status_only=status_only)
+> ParamSetResponse get_configuration(id, status_only=status_only)
 
 Returns a model configuration
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ParamSetResponse**](ParamSetResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_configuration**
-> InlineResponse200 update_configuration(id, body=body)
+> ParamSetResponse update_configuration(id, body=body)
 
 Update and replace a model configuration
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ParamSetResponse**](ParamSetResponse.md)
 
 ### Authorization
 

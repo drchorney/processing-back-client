@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import swagger_client
-from models.inline_response2001 import InlineResponse2001  # noqa: E501
+from models.param_set_response import ParamSetResponse  # noqa: E501
 from swagger_client.rest import ApiException
 
 
-class TestInlineResponse2001(unittest.TestCase):
-    """InlineResponse2001 unit test stubs"""
+class TestParamSetResponse(unittest.TestCase):
+    """ParamSetResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestInlineResponse2001(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse2001(self):
-        """Test InlineResponse2001"""
+    def testParamSetResponse(self):
+        """Test ParamSetResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.inline_response2001.InlineResponse2001()  # noqa: E501
+        # model = swagger_client.models.param_set_response.ParamSetResponse()  # noqa: E501
         pass
 
 
