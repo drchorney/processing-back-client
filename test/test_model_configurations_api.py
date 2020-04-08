@@ -49,6 +49,13 @@ class TestModelConfigurationsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_configurations(self):
+        """Test case for get_configurations
+
+        Returns all of a users model configurations.  # noqa: E501
+        """
+        pass
+
     def test_launch_configuration(self):
         """Test case for launch_configuration
 

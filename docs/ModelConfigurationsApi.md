@@ -5,10 +5,11 @@ All URIs are relative to *https://app.micromechanicalmodeling.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_configuration**](ModelConfigurationsApi.md#create_configuration) | **POST** /configuration | Creates a model configuration.
-[**download_configuration**](ModelConfigurationsApi.md#download_configuration) | **GET** /configuration/{_id}/download | Retreive signed url to download binary
-[**get_configuration**](ModelConfigurationsApi.md#get_configuration) | **GET** /configuration/{_id} | Returns a model configuration
-[**launch_configuration**](ModelConfigurationsApi.md#launch_configuration) | **PATCH** /configuration/{_id} | Launch a configuration to one of the workers to be processed.
-[**update_configuration**](ModelConfigurationsApi.md#update_configuration) | **PUT** /configuration/{_id} | Update and replace a model configuration
+[**download_configuration**](ModelConfigurationsApi.md#download_configuration) | **GET** /configuration/{configurationId}/download | Retreive signed url to download binary
+[**get_configuration**](ModelConfigurationsApi.md#get_configuration) | **GET** /configuration/{configurationId} | Returns a model configuration
+[**get_configurations**](ModelConfigurationsApi.md#get_configurations) | **GET** /configuration/index | Returns all of a users model configurations.
+[**launch_configuration**](ModelConfigurationsApi.md#launch_configuration) | **PATCH** /configuration/{configurationId} | Launch a configuration to one of the workers to be processed.
+[**update_configuration**](ModelConfigurationsApi.md#update_configuration) | **PUT** /configuration/{configurationId} | Update and replace a model configuration
 
 # **create_configuration**
 > ParamSetResponse create_configuration(body=body)
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_configuration**
-> InlineResponse200 download_configuration(id)
+> InlineResponse200 download_configuration(configuration_id)
 
 Retreive signed url to download binary
 
@@ -87,11 +88,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | 
+configuration_id = 'configuration_id_example' # str | 
 
 try:
     # Retreive signed url to download binary
-    api_response = api_instance.download_configuration(id)
+    api_response = api_instance.download_configuration(configuration_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelConfigurationsApi->download_configuration: %s\n" % e)
@@ -101,7 +102,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **configuration_id** | **str**|  | 
 
 ### Return type
 
@@ -119,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_configuration**
-> ParamSetResponse get_configuration(id, status_only=status_only)
+> ParamSetResponse get_configuration(configuration_id, status_only=status_only)
 
 Returns a model configuration
 
@@ -141,12 +142,12 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | 
-status_only = true # bool | pass an optional statusOnly to just retun status for polling. (optional)
+configuration_id = 'configuration_id_example' # str | 
+status_only = 'status_only_example' # str | pass an optional statusOnly to just retun status for polling. (optional)
 
 try:
     # Returns a model configuration
-    api_response = api_instance.get_configuration(id, status_only=status_only)
+    api_response = api_instance.get_configuration(configuration_id, status_only=status_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelConfigurationsApi->get_configuration: %s\n" % e)
@@ -156,8 +157,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **status_only** | **bool**| pass an optional statusOnly to just retun status for polling. | [optional] 
+ **configuration_id** | **str**|  | 
+ **status_only** | **str**| pass an optional statusOnly to just retun status for polling. | [optional] 
 
 ### Return type
 
@@ -174,8 +175,58 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_configurations**
+> list[ParamSetResponse] get_configurations()
+
+Returns all of a users model configurations.
+
+Grab all of a users model configurations. User identiy is grabbed from cookies or auth token. 
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyAuth
+configuration = swagger_client.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
+
+try:
+    # Returns all of a users model configurations.
+    api_response = api_instance.get_configurations()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ModelConfigurationsApi->get_configurations: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[ParamSetResponse]**](ParamSetResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **launch_configuration**
-> launch_configuration(id)
+> launch_configuration(configuration_id)
 
 Launch a configuration to one of the workers to be processed.
 
@@ -197,11 +248,11 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | 
+configuration_id = 'configuration_id_example' # str | 
 
 try:
     # Launch a configuration to one of the workers to be processed.
-    api_instance.launch_configuration(id)
+    api_instance.launch_configuration(configuration_id)
 except ApiException as e:
     print("Exception when calling ModelConfigurationsApi->launch_configuration: %s\n" % e)
 ```
@@ -210,7 +261,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **configuration_id** | **str**|  | 
 
 ### Return type
 
@@ -228,7 +279,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_configuration**
-> ParamSetResponse update_configuration(id, body=body)
+> ParamSetResponse update_configuration(configuration_id, body=body)
 
 Update and replace a model configuration
 
@@ -250,12 +301,12 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ModelConfigurationsApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | 
+configuration_id = 'configuration_id_example' # str | 
 body = swagger_client.ParamSet() # ParamSet | Model Configuration parameters to update. (optional)
 
 try:
     # Update and replace a model configuration
-    api_response = api_instance.update_configuration(id, body=body)
+    api_response = api_instance.update_configuration(configuration_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelConfigurationsApi->update_configuration: %s\n" % e)
@@ -265,7 +316,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **configuration_id** | **str**|  | 
  **body** | [**ParamSet**](ParamSet.md)| Model Configuration parameters to update. | [optional] 
 
 ### Return type
