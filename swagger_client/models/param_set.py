@@ -37,7 +37,8 @@ class ParamSet(object):
         'peak_frequency': 'float',
         'simulation_time': 'float',
         'layers': 'list[Layer]',
-        'density_layers': 'list[DensityLayer]'
+        'density_layers': 'list[DensityLayer]',
+        'params': 'object'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class ParamSet(object):
         'peak_frequency': 'peakFrequency',
         'simulation_time': 'simulationTime',
         'layers': 'layers',
-        'density_layers': 'densityLayers'
+        'density_layers': 'densityLayers',
+        'params': 'params'
     }
 
-    def __init__(self, name=None, hx=None, hy=None, dz=None, model_type=None, peak_frequency=None, simulation_time=None, layers=None, density_layers=None):  # noqa: E501
+    def __init__(self, name=None, hx=None, hy=None, dz=None, model_type=None, peak_frequency=None, simulation_time=None, layers=None, density_layers=None, params=None):  # noqa: E501
         """ParamSet - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._hx = None
@@ -63,6 +65,7 @@ class ParamSet(object):
         self._simulation_time = None
         self._layers = None
         self._density_layers = None
+        self._params = None
         self.discriminator = None
         self.name = name
         self.hx = hx
@@ -73,6 +76,8 @@ class ParamSet(object):
         self.simulation_time = simulation_time
         self.layers = layers
         self.density_layers = density_layers
+        if params is not None:
+            self.params = params
 
     @property
     def name(self):
@@ -286,6 +291,27 @@ class ParamSet(object):
             raise ValueError("Invalid value for `density_layers`, must not be `None`")  # noqa: E501
 
         self._density_layers = density_layers
+
+    @property
+    def params(self):
+        """Gets the params of this ParamSet.  # noqa: E501
+
+
+        :return: The params of this ParamSet.  # noqa: E501
+        :rtype: object
+        """
+        return self._params
+
+    @params.setter
+    def params(self, params):
+        """Sets the params of this ParamSet.
+
+
+        :param params: The params of this ParamSet.  # noqa: E501
+        :type: object
+        """
+
+        self._params = params
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **simulation_time** | **float** |  | [optional] 
 **layers** | [**list[Layer]**](Layer.md) |  | [optional] 
 **density_layers** | [**list[DensityLayer]**](DensityLayer.md) |  | [optional] 
+**params** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
